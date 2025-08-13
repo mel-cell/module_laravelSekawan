@@ -1,20 +1,20 @@
-@extends('layouts.user')
-
-@section('title', 'User Dashboard')
-
-@section('hero')
-    <div class="hero min-h-screen" style="background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570);">
-        <div class="hero-overlay bg-opacity-60"></div>
-            <div class="max-w-lg">
-                <h1 class="mb-5 text-xl font-semibold text-white md:text-3xl lg:text-4xl">User Dashboard</h1>
-                <p class="mb-5 text-sm text-white md:text-base">Manage your borrowed books and explore our collection.</p>
-                <a href="#" class="btn btn-sm bg-gray-800 text-white">View My Books</a>
+<x-user.layout>
+    <x-slot name="title">User Dashboard</x-slot>
+    
+    <x-slot name="hero">
+        <div class="hero min-h-screen" style="background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570);">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-lg">
+                    <h1 class="mb-5 text-xl font-semibold text-white md:text-3xl lg:text-4xl">User Dashboard</h1>
+                    <p class="mb-5 text-sm text-white md:text-base">Manage your borrowed books and explore our collection.</p>
+                    <a href="#" class="btn btn-sm bg-gray-800 text-white">View My Books</a>
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    </x-slot>
 
-@section('content')
+    <!-- Konten utama User Dashboard -->
     <div class="max-w-7xl mx-auto">
         <!-- Dashboard Stats -->
         <section class="mb-12">
@@ -65,4 +65,4 @@
             </div>
         </section>
     </div>
-@endsection
+</x-user.layout>

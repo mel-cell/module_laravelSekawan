@@ -63,20 +63,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <section class="w-full h-48 flex items-center justify-center bg-gray-50 md:h-64 lg:h-72">
-            <div class="flex justify-between items-center gap-12 lg:gap-24">
-                <div class="hidden md:block md:w-fit md:rounded md:overflow-hidden">
-                    <img src="{{ asset('assets/img/matahari.jpeg') }}" alt="Book Image" class="w-28 lg:w-32">
-                </div>
-                <div class="flex flex-col items-center gap-2 md:items-start">
-                    <h1 class="font-semibold">WELCOME TO LIBRARY APP</h1>
-                    <p class="text-sm">Choose the best books you want to read in here.</p>
-                    <button class="px-3 py-2 mt-2 bg-gray-800 rounded text-xs font-medium text-white lg:text-sm">Check
-                        Our Books</button>
-                </div>
-            </div>
-        </section> -->
     </main>
 </body>
 
