@@ -23,6 +23,8 @@ class BorrowingFactory extends Factory
             'borrowing_returned' => fake()->boolean(30), // 30% sudah dikembalikan
             'borrowing_notes' => fake()->optional()->sentence,
             'borrowing_fine' => fake()->optional()->numberBetween(0, 50000),
+            'borrowing_borrowed_at' => fake()->dateTimeBetween('-1 month', 'now'),
+            'returned_at' => null,
         ];
     }
 }

@@ -9,7 +9,21 @@
                 id="navMenu">
                 @foreach($menus as $key => $menu)
                     <li class="px-4 py-2 text-sm font-medium transition-all duration-300 rounded hover:bg-gray-200">
-                        <a href="#{{ $key }}">{{ $menu }}</a>
+                        @if($key === 'home')
+                            @auth
+                                <a href="{{ route('user.Home') }}">{{ $menu }}</a>
+                            @else
+                                <a href="{{ route('Home') }}">{{ $menu }}</a>
+                            @endauth
+                        @elseif($key === 'books')
+                            <a href="#">{{ $menu }}</a>
+                        @elseif($key === 'categories')
+                            <a href="#">{{ $menu }}</a>
+                        @elseif($key === 'borrowings')
+                            <a href="{{ route('user.borrowing.index') }}">{{ $menu }}</a>
+                        @else
+                            <a href="#{{ $key }}">{{ $menu }}</a>
+                        @endif
                     </li>
                 @endforeach
                 <li class="mt-4 flex flex-col gap-4 md:flex-row md:items-center lg:mt-0 lg:ml-4">
@@ -18,7 +32,7 @@
                             <p class="font-medium text-sm text-gray-700">{{ Auth::user()->name ?? 'User' }}</p>
                             <div class="avatar placeholder">
                                 <div class="bg-gray-200 text-neutral-content rounded-full w-10 flex items-center justify-center">
-                                    <span class="text-lg font-semibold">{{ substr(Auth::user()->name ?? 'U', 0, 1) }}</span>
+                                    <span class="text-lg font-semibold">{{ substr(Auth::user()->username ?? 'U', 0, 1) }}</span>
                                 </div>
                             </div>
                             <form action="{{ route('logout') }}" method="POST" class="ml-2">
