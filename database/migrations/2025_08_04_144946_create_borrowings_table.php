@@ -21,7 +21,11 @@ return new class extends Migration
             // Foreign Keys
             $table->foreign('borrowing_user_id')->references('id')->on('users')->onDelete('set null');
 
+            $table->dateTime('borrowing_borrowed_at')->nullable();
+            $table->dateTime('returned_at')->nullable();
             $table->timestamps();
+
+            $table->unique(['borrowing_user_id', 'borrowing_borrowed_at', 'returned_at'], 'unique_borrowing_per_user_date');
         });
     }
 

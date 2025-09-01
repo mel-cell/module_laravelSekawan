@@ -7,45 +7,46 @@
         <i class="fas fa-home"></i>
         <span>Dashboard</span>
     </a>
+    
+    <!-- Authors -->
+    <a href="{{ route('admin.author') }}"
+        class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200 {{ request()->routeIs('admin.author') ? 'bg-gray-200 font-semibold' : '' }}">
+        <i class="fas fa-user-edit"></i>
+        <span>Authors</span>
+    </a>
 
     <!-- Books Management -->
-    <a href="#"
+    <a href="{{ route('admin.books') }}"
         class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
         <i class="fas fa-book"></i>
         <span>Books</span>
     </a>
 
     <!-- Categories -->
-    <a href="#"
+    <a href="{{ route('admin.category') }}"
         class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
         <i class="fas fa-tags"></i>
         <span>Categories</span>
     </a>
 
-    <!-- Authors -->
-    <a href="#"
-        class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
-        <i class="fas fa-user-edit"></i>
-        <span>Authors</span>
-    </a>
 
     <!-- Publishers -->
-    <a href="#"
+    <a href="{{ route('admin.publisher') }}"
         class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
         <i class="fas fa-building"></i>
         <span>Publishers</span>
     </a>
 
     <!-- Users Management -->
-    <a href="#"
+    <a href="{{ route('admin.shelf') }}"
         class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
         <i class="fas fa-users"></i>
-        <span>Users</span>
+        <span>Shelf</span>
     </a>
 
     <!-- Borrowings -->
-    <a href="#"
-        class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
+    <a href="{{ route('admin.borrowing.index') }}"
+        class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200 {{ request()->routeIs('admin.borrowing.*') ? 'bg-gray-200 font-semibold' : '' }}">
         <i class="fas fa-exchange-alt"></i>
         <span>Borrowings</span>
     </a>

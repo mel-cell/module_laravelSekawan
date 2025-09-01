@@ -20,14 +20,21 @@ class Navbar extends Component
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
-    {   
+    {
         $loggedIn = auth()->check();
         $menus = [
             'home' => 'Home',
             'books' => 'Books',
             'categories' => 'Categories',
-            'profile' => 'Profile',
         ];
+
+        // Add borrowing menu for authenticated users
+        if ($loggedIn) {
+            
+            $menus['borrowings'] = 'My Borrowings';
+        }
+
+        $menus['profile'] = 'Profile';
 
         return view('components.user.navbar', array(
             'loggedIn' => $loggedIn,
