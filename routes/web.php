@@ -86,6 +86,7 @@ Route::prefix('/admin')->middleware(['auth', 'admin'])->group(function() {
 // User Routes
 Route::prefix('/user')->middleware(['auth'])->group(function() {
     Route::get('/', [UserHomeController::class, 'index'])->name('user.Home');
+    Route::get('/settings', [UserHomeController::class, 'settings'])->name('user.settings');
 
     // borrowing routes
     Route::get('/my-borrowings', [UserBorrowingController::class, 'index'])->name('user.borrowing.index');

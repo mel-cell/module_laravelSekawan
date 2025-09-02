@@ -34,8 +34,6 @@ class Navbar extends Component
             $menus['borrowings'] = 'My Borrowings';
         }
 
-        $menus['profile'] = 'Profile';
-
         return view('components.user.navbar', array(
             'loggedIn' => $loggedIn,
             'menus' => $menus
