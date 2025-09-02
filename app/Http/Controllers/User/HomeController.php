@@ -17,4 +17,11 @@ class HomeController extends Controller
             'recentBooks' => Book::with(['author', 'category'])->latest()->limit(5)->get()
         ]);
     }
+
+    public function settings()
+    {
+        return view('page.user.settings', [
+            'user' => auth()->user()
+        ]);
+    }
 }
