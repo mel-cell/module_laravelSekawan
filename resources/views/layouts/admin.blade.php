@@ -23,7 +23,7 @@
         
         <div class="flex-1 flex flex-col overflow-hidden">
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 px-4 py-4 md:px-8 md:py-8">
-                {{ $content ?? '' }}
+                @yield('content')
             </main>
         </div>
     </div>

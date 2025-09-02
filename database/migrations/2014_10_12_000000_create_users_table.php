@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('username', 150)->unique();
             $table->string('email', 150)->unique();
             $table->string('password');
+            $table->string('profileimg')->nullable(true);
             $table->boolean('is_admin')->default(false);
             $table->timestamps();
             $table->rememberToken();

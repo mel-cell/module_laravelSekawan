@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\User\BorrowingController as UserBorrowingController;
 use App\Http\Controllers\Admin\BorrowingController as AdminBorrowingController;
-
+use App\Http\Controllers\Admin\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,12 +81,19 @@ Route::prefix('/admin')->middleware(['auth', 'admin'])->group(function() {
     Route::delete('/borrowings/{id}', [AdminBorrowingController::class, 'destroy'])->name('admin.borrowing.destroy');
     Route::post('/borrowings/{id}/return', [AdminBorrowingController::class, 'returnBook'])->name('admin.borrowing.return');
     Route::get('/borrowings/get-book-item-form', [AdminBorrowingController::class, 'getBookItemForm'])->name('admin.borrowing.getBookItemForm');
+
+    // settings route
+    Route::get('/settings', [SettingsController::class, 'index'])->name('admin.settings');
+    Route::patch('/settings/update-profile-image', [SettingsController::class, 'updateProfileImage'])->name('admin.settings.updateProfileImage');
 });
 
 // User Routes
 Route::prefix('/user')->middleware(['auth'])->group(function() {
     Route::get('/', [UserHomeController::class, 'index'])->name('user.Home');
     Route::get('/settings', [UserHomeController::class, 'settings'])->name('user.settings');
+    Route::patch('/settings/update-profile-image', [UserHomeController::class, 'updateProfileImage'])->name('user.settings.updateProfileImage');
+    Route::patch('/settings/update-personal-info', [UserHomeController::class, 'updatePersonalInfo'])->name('user.settings.updatePersonalInfo');
+    Route::patch('/settings/update-password', [UserHomeController::class, 'updatePassword'])->name('user.settings.updatePassword');
 
     // borrowing routes
     Route::get('/my-borrowings', [UserBorrowingController::class, 'index'])->name('user.borrowing.index');

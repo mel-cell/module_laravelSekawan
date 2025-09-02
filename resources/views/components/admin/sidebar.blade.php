@@ -52,7 +52,7 @@
     </a>
 
     <!-- Settings -->
-    <a href="#"
+    <a href="{{route('admin.settings')}}"
         class="text-sm flex items-center gap-3 px-4 py-3 rounded transition-all duration-300 hover:bg-gray-200">
         <i class="fas fa-gear"></i>
         <span>Settings</span>
