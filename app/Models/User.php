@@ -6,7 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;   
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -31,7 +32,8 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'is_admin'
+        'is_admin',
+        'profileimg'
 
     ];
 
@@ -64,5 +66,28 @@ class User extends Authenticatable
     public function getNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    // Accessor for profile image URL
+    public function getProfileImageUrlAttribute()
+    {
+        return $this->profileimg ? asset('storage/' . $this->profileimg) : asset('assets/img/profile-placeholder.jpg');
+    }
+
+    public static function updateProfileImageById(string $id, array $data)
+    {
+        $user = self::find($id);
+
+        if (!$user) {
+            return null;
+        }
+
+        if ($user->profileimg && isset($data['profileimg'])) {
+            Storage::disk('public')->delete($user->profileimg);
+        }
+
+        $user->update($data);
+
+        return $user;
     }
 }

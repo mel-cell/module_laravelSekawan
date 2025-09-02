@@ -30,9 +30,9 @@
                     @auth
                         <div class="flex items-center gap-4">
                             <p class="font-medium text-sm text-gray-700">{{ Auth::user()->name ?? 'User' }}</p>
-                            <div class="avatar placeholder">
-                                <div class="bg-gray-200 text-neutral-content rounded-full w-10 flex items-center justify-center">
-                                    <span class="text-lg font-semibold">{{ substr(Auth::user()->username ?? 'U', 0, 1) }}</span>
+                            <div class="avatar">
+                                <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <img src="{{ Auth::user()->profile_image_url }}" alt="Profile" class="object-cover">
                                 </div>
                             </div>
 
