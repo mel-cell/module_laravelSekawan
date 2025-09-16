@@ -23,7 +23,7 @@ class PublisherRequest extends FormRequest
     {
         return [
             'publisher_name' => 'required|string|max:255',
-            'publisher_description' => 'nullable|string|max:1000',
+            'publisher_deskription' => 'nullable|string|max:1000',
             
         ];
     }
@@ -34,8 +34,8 @@ class PublisherRequest extends FormRequest
             'publisher_name.required' => 'Nama penerbit harus diisi.',
             'publisher_name.string' => 'Nama penerbit harus berupa teks.',
             'publisher_name.max' => 'Nama penerbit tidak boleh lebih dari 255 karakter.',
-            'publisher_description.string' => 'Deskripsi penerbit harus berupa teks.',
-            'publisher_description.max' => 'Deskripsi penerbit tidak boleh lebih dari 1000 karakter.',
+            'publisher_deskription.string' => 'Deskripsi penerbit harus berupa teks.',
+            'publisher_deskription.max' => 'Deskripsi penerbit tidak boleh lebih dari 1000 karakter.',
         ];
     }
 }

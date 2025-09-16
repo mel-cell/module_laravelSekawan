@@ -23,7 +23,7 @@ class Table extends Component
     {
         $publishers = Publisher::when($this->search, function ($query) {
                 $query->where('publisher_name', 'like', '%' . $this->search . '%')
-                      ->orWhere('publisher_description', 'like', '%' . $this->search . '%');
+                      ->orWhere('publisher_deskription', 'like', '%' . $this->search . '%');
             })
             ->orderBy('created_at', 'desc')
             ->paginate(10);
