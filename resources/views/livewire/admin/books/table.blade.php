@@ -2,7 +2,7 @@
     <div class="bg-white shadow-md rounded-lg p-6">
         <h2 class="text-lg font-semibold mb-4">Books List</h2>
         <div class="mb-4">
-            <input type="text" wire:model.debounce.300ms="search" placeholder="Search books..." class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="text" wire:model.live.debounce.300ms="search" placeholder="Search books..." class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white">

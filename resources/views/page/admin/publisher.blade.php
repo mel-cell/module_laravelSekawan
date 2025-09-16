@@ -38,11 +38,11 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="create_publisher_description">Description</label>
-                        <textarea name="publisher_description" id="create_publisher_description" placeholder="Publisher Description" rows="3"
-                                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('publisher_description') border-red-500 @enderror"
-                                  required>{{ old('publisher_description') }}</textarea>
-                        @error('publisher_description')
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="create_publisher_deskription">Description</label>
+                        <textarea name="publisher_deskription" id="create_publisher_deskription" placeholder="Publisher Description" rows="3"
+                                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('publisher_deskription') border-red-500 @enderror"
+                                  required>{{ old('publisher_deskription') }}</textarea>
+                        @error('publisher_deskription')
                             <p class="text-red-500 text-xs italic mt-1">{{ $message }}</p>
                         @enderror
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="edit_description">Description</label> {{-- Changed from Address to Description --}}
-                        <textarea id="edit_description" name="publisher_description" rows="3" {{-- Changed name and id to publisher_description --}}
+                        <textarea id="edit_description" name="publisher_deskription" rows="3" {{-- Changed name and id to publisher_deskription --}}
                                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
                     </div>
                     <div class="flex justify-end space-x-2 mt-4">

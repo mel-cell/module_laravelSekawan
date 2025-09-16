@@ -19,7 +19,7 @@ class Publisher extends Model
     protected $fillable = [
         'publisher_id',
         'publisher_name',
-        'publisher_description'
+        'publisher_deskription'
     ];
 
 
