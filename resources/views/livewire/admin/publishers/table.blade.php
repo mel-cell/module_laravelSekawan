@@ -22,10 +22,10 @@
                     <tr>
                         <td class="py-2 px-4 border-b">{{ $index + $publishers->firstItem() }}</td>
                         <td class="py-2 px-4 border-b">{{ $publisher->publisher_name }}</td>
-                        <td class="py-2 px-4 border-b">{{ \Illuminate\Support\Str::limit($publisher->publisher_description, 50) }}</td>
+                        <td class="py-2 px-4 border-b">{{ \Illuminate\Support\Str::limit($publisher->publisher_deskription, 50) }}</td>
                         <td class="py-2 px-4 border-b">
                             <div class="flex space-x-2">
-                                <button onclick="editPublisher('{{ $publisher->publisher_id }}', '{{ $publisher->publisher_name }}', '{{ $publisher->publisher_description }}')"
+                                <button onclick="editPublisher('{{ $publisher->publisher_id }}', '{{ $publisher->publisher_name }}', '{{ $publisher->publisher_deskription }}')"
                                         class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded text-sm">
                                     Edit
                                 </button>

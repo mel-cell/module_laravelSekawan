@@ -6,7 +6,7 @@
         <div class="flex items-center gap-1">
             <p class="text-xs text-gray-400 md:text-sm">Admin</p>
             <p class="text-xs text-gray-400 md:text-sm">/</p>
-            <p class="text-xs text-gray-400 md:text-sm"><a href="{{ route('admin.book') }}" class="text-blue-500 hover:underline">Book</a></p>
+            <p class="text-xs text-gray-400 md:text-sm"><a href="{{ route('admin.books') }}" class="text-blue-500 hover:underline">Book</a></p>
             <p class="text-xs text-gray-400 md:text-sm">/</p>
             <p class="text-xs text-gray-400 md:text-sm">Create</p>
         </div>
@@ -23,7 +23,7 @@
 
         <div class="bg-white shadow-md rounded-lg p-6 my-4">
             <h2 class="text-lg font-semibold mb-4">Book Details</h2>
-            <form action="{{ route('admin.book.store') }}" method="POST">
+            <form action="{{ route('admin.books.store') }}" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="book_name">Title</label>
@@ -144,7 +144,7 @@
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Create Book
                     </button>
-                    <a href="{{ route('admin.book') }}" 
+                    <a href="{{ route('admin.books') }}" 
                        class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-gray-800">
                         Cancel
                     </a>
